@@ -1,0 +1,25 @@
+#footer {
+        height: auto;
+        margin: 0rem;
+        padding-top: 12rem;
+
+
+footer p {
+    text-align: center;
+}
+}
+
+
+@media (max-width: 768px) {
+
+    #footer {
+        height: auto;
+        
+
+    footer p {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+}}

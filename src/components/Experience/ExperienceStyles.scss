@@ -1,0 +1,113 @@
+#experience {
+  padding: 2rem 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4rem 0;
+  padding-top: 10rem;
+  justify-content: center;
+
+  .section__text {
+    text-align: center;
+    padding: 2rem;
+
+    p {
+      margin-top: 1px;
+      font-weight: 600;
+    }
+
+    .section__text__p1 {
+      text-align: center;
+      color: rgb(85, 85, 85);
+    }
+
+    .title {
+      font-size: 2rem;
+      color: #333;
+    }
+  }
+
+  .skills-container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+
+    .skills-category {
+      flex: 1;
+      padding: 1rem;
+      border-radius: 1rem;
+      border: 0.1rem solid rgb(163, 163, 163);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .skill {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        transition: transform 0.2s ease;
+
+        &:hover {
+          transform: scale(1.1);
+          background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+
+        p {
+          font-size: 1rem;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  /* Media Query para Dispositivos Móveis */
+  @media (max-width: 600px) {
+    #experience {
+      padding-top: 5rem;
+      margin: 2rem 0;
+    }
+
+    .section__text {
+      padding: 1rem;
+    }
+
+    .skills-container {
+      flex-direction: column;
+      align-items: center;
+      width: 90%;
+    }
+
+    .skills-category {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .skills-list {
+      justify-content: center;
+    }
+
+    .skill p {
+      font-size: 0.9rem;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+#contact {
+  padding: 2rem 5%;
+  text-align: center;
+  height: 15vh;
+}
+
+.section__text {
+  text-align: center;
+  padding: 2rem;
+}
+
+.section__text p {
+  margin-top: 1px;
+  font-weight: 600;
+}
+
+.section__text__p1 {
+  text-align: center;
+  color: rgb(85, 85, 85);
+}
+
+.title {
+  font-size: 2rem;
+  color: #333;
+}
+
+.contact-info {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  justify-content: center;
+  gap: 1rem;
+  border-radius: 1rem;
+  border: 0.1rem solid rgb(163, 163, 163);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-item .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.contact-item p {
+  font-size: 1rem;
+}
+
+.contact-item p a {
+  color: rgb(85, 85, 85);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  #contact {
+    height: auto;
+    align-items: start;
+    margin: 0;
+    .section__text {
+     align-self: center;
+    }
+  }
+
+  .contact-info p {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+  }
+}

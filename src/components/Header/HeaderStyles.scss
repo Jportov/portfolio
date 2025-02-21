@@ -1,0 +1,159 @@
+nav {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: relative;
+  justify-content: space-around;
+  z-index: 2;
+
+  .close-btn{
+    display: none;
+  }
+  .header-content {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo img {
+    width: 60px;
+    
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    font-size: 2rem;
+    font-weight: 800;
+
+    a {
+      color: black;
+      text-decoration: none;
+      &:hover {
+        color: grey;
+        text-decoration: underline;
+        text-underline-offset: 0.5rem;
+        text-decoration-color: rgb(181, 181, 181);
+      }
+    }
+  }
+
+  /* Ícone de hambúrguer - escondido no desktop */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 0.3rem;
+
+    .bar {
+      width: 20px;
+      height: 3px;
+      background-color: black;
+      border-radius: 1px;
+      transition: 0.3s;
+    }
+  }
+
+  /* Estilos para dispositivos móveis */
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-around;
+    .logo img {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto;
+      
+    }
+  .title {
+      font-size: 1rem;
+      color: #333;
+  }
+    .nav-links {
+      /* Menu de navegação para mobile */
+      display: none; /* Esconder no mobile inicialmente */
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 60%;
+      height: 100vh;
+      background-color: white;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 3;
+      font-weight: 800;
+
+      &.open {
+        display: flex;
+        transform: translateX(0);
+      }
+    }
+
+    /* Exibir ícone de hambúrguer no mobile */
+    .hamburger {
+      display: flex;
+      position: absolute;
+      right: 3rem;
+      margin: 0 auto;
+      padding: 1.2rem;
+      top: auto;
+      
+
+      .bar {
+        width: 30px;
+        height: 4px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        max-width: 100%;
+        -webkit-transition: transform 0.3s ease, opacity 0.3s ease;
+        -moz-transition: transform 0.3s ease, opacity 0.3s ease;
+        -ms-transition: transform 0.3s ease, opacity 0.3s ease;
+        -o-transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+      &.open .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      &.open .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      &.open .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+
+    /* Overlay para fechar o menu ao clicar fora */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5); /* Opacidade semitransparente */
+      z-index: 2; /* Camada inferior ao menu */
+    }
+
+    /* Botão de fechar dentro do menu - apenas visível no mobile */
+    .close-btn {
+      display: none; /* Exibe o botão no mobile */
+      background: none;
+      border: none;
+      color: black;
+      font-size: 1.5rem;
+      cursor: pointer;
+      margin-top: 1rem;
+
+      &:hover {
+        color: grey;
+      }
+    }
+  }
+}
