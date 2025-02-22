@@ -25,7 +25,7 @@ function Profile() {
           </button>
         <button
           className="btn btn-color-2"
-          onClick={() => window.open(require('../assets/images/CVPORTO.pdf'), '_blank')}>
+          onClick={() => window.open(require('../assets/images/cvjoao.pdf'), '_blank')}>
           Currículo
         </button>
         </div>
