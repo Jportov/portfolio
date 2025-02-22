@@ -1,21 +1,16 @@
 import React from 'react';
 import educationIcon from '../assets/images/education.png';
 import experienceIcon from '../assets/images/experience.png';
-import aboutImage from '../assets/images/iajoao.jpeg';
 import './AboutStyles.scss';
 
 function About() {
   return (
     <section id="about">
-        <div className="section__text">
+      <div className="section__text">
         <p className="section__text__p1">Conheça mais</p>
         <h1 className="title">Sobre mim</h1>
       </div>
-      
       <div className="about-content">
-        <div className="about-pic-container">
-          <img src={aboutImage} alt="Sobre Mim" />
-        </div>
         <div className="about-details">
           <div className="details">
             <img src={experienceIcon} alt="Experiência" className="detail-icon" />

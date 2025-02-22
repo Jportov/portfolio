@@ -7,7 +7,7 @@ function Experience() {
     <section id="experience">
       <div className="section__text">
         <p className="section__text__p1">Explore minha</p>
-        <h1 className="title">Experiência</h1>
+        <h1 className="title">Minha Experiência</h1>
       </div>
 
       <div className="skills-container">

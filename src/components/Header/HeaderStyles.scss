@@ -1,10 +1,13 @@
 nav {
+  margin: 20px;
+  padding: 20px;
   display: flex;
   align-items: center;
   padding: 1rem 2rem;
   position: relative;
-  justify-content: space-around;
+  justify-content: flex-start;
   z-index: 2;
+  padding-left: 100px;
 
   .close-btn{
     display: none;
@@ -13,24 +16,18 @@ nav {
     display: flex;
     align-items: center;
   }
-
-  .logo img {
-    width: 60px;
-    
-  }
-
   .nav-links {
     display: flex;
     gap: 1rem;
     list-style: none;
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 500;
 
     a {
       color: black;
       text-decoration: none;
       &:hover {
-        color: grey;
+        
         text-decoration: underline;
         text-underline-offset: 0.5rem;
         text-decoration-color: rgb(181, 181, 181);

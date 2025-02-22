@@ -1,7 +1,7 @@
 #contact {
   padding: 2rem 5%;
   text-align: center;
-  height: 15vh;
+  min-height: 100vh; // Define a altura mínima para a seção
 }
 
 .section__text {
@@ -20,7 +20,7 @@
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #333;
 }
 

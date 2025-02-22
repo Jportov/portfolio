@@ -3,9 +3,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 4rem 0;
-  padding-top: 10rem;
+  padding-top: 1rem;
   justify-content: center;
+  min-height: 100vh; // Define a altura mínima para a seção
 
   .section__text {
     text-align: center;
@@ -22,7 +22,7 @@
     }
 
     .title {
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: #333;
     }
   }
@@ -89,6 +89,7 @@
 
     .section__text {
       padding: 1rem;
+      
     }
 
     .skills-container {
@@ -111,3 +112,4 @@
     }
   }
 }
+

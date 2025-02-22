@@ -1,8 +1,8 @@
 #profile {
-  height: 70vh;
-  padding: 2rem 5%;
+  min-height: 100vh; // Define a altura mínima para a seção
+  height: 80vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   border-radius: 1rem;
   padding-top: 10rem;
@@ -105,10 +105,11 @@
 
   /* Media Query para dispositivos móveis */
   @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
     height: auto; /* Permitir que a altura se ajuste ao conteúdo */
     padding-top: 5rem;
-    padding: 1rem;
-    gap: 2rem;
+    padding: 1rem;  
 
     .section__pic-container {
       width: 200px;

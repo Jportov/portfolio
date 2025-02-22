@@ -1,8 +1,7 @@
 #projects {
   background-color: #fffefe;
-  padding-top: 5rem;
   padding-bottom: 3rem;
-  height: auto;
+  min-height: 100vh; // Define a altura mínima para a seção
   width: 100%;
 
   .section__text {
@@ -20,84 +19,94 @@
     }
 
     .title {
-      font-size: 2rem;
+      font-size: 1.5rem;
       color: #333;
-    }}
-  
+    }
+  }
 
   .projects-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap; // Alterado de nowrap para wrap
     gap: 1.5rem;
     justify-content: center;
-    overflow-x: visible ;
+    overflow-x: visible;
 
-    .project {
-      width: calc(33.33% - 1rem); 
-      max-width: 250px;
-      background-color: #fff;
-      text-align: center;
+    @media (max-width: 768px) {
+      width: 100%; // Alterado para 100% para ocupar toda a largura
+      display: flex; // Alterado de block para flex
+      flex-direction: column; // Adicionado para empilhar os projetos verticalmente
+      align-items: center
+    }
+  }
+
+  .project {
+    flex: 1 1 250px; // Adicionado para permitir flexibilidade
+    padding: 0;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    border: 0.1rem solid rgb(163, 163, 163);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+
+    /* Efeito de hover */
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      background-color: #f8f8f8; /* Ligeiro escurecimento do fundo */
+    }
+
+    /* Responsividade */
+
+    @media (max-width: 480px) {
+      width: 360px;
+      height: auto;
+      
+    }
+
+    img {
+      width: 100%;
       border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      margin-bottom: 1.5rem;
-      border: 0.1rem solid rgb(163, 163, 163);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      height: 500px;
+    }
 
-      /* Efeito de hover */
-      &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-        background-color: #f8f8f8; /* Ligeiro escurecimento do fundo */
-      }
+    h2 {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+      color: #333;
+    } 
+    
+    .buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
 
-      /* Responsividade */
-      @media (max-width: 768px) {
-        width: calc(50% - 1rem); 
-      }
-
-      @media (max-width: 480px) {
-        width: 100%;
-      }
-
-      img {
-        width: 100%;
-        border-radius: 8px;
-        object-fit: contain;
-        height: 350px;
-      }
-
-      h2 {
-        font-size: 1.25rem;
-        margin: 0.5rem 0;
+      button {
+        
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-weight: 500;
         color: #333;
-      }
+        background-color: #fff;
+        border: 0.1rem solid rgb(163, 163, 163);
+        transition: background-color 0.3s ease, transform 0.3s ease;
 
-      .buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        margin-top: 1rem;
-
-        button {
-          
-          padding: 0.5rem 1rem;
-          border-radius: 0.5rem;
-          cursor: pointer;
-          font-weight: 500;
-          color: #333;
-          background-color: #fff;
-          border: 0.1rem solid rgb(163, 163, 163);
-          transition: background-color 0.3s ease, transform 0.3s ease;
-
-          &:hover {
-            transform: scale(1.05); /* Expande o botão levemente */
-            box-shadow: 0 0 10px rgba(53, 53, 53, 0.6); /* Efeito de aura */
-            background-color: rgb(53, 53, 53) ;
-            color: white;
-          }
+        &:hover {
+          transform: scale(1.05); /* Expande o botão levemente */
+          box-shadow: 0 0 10px rgba(53, 53, 53, 0.6); /* Efeito de aura */
+          background-color: rgb(53, 53, 53);
+          color: white;
         }
       }
     }
+  }
+
+  @media (max-width: 768px) {
+    padding-bottom: 2rem; // Ajuste do padding para telas menores
+    min-height: 80vh; // Ajuste da altura mínima para telas menores
   }
 }

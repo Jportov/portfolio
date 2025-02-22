@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import logo from "../assets/images/JV.png";
 import './HeaderStyles.scss';
 
 function Header() {
@@ -16,8 +15,6 @@ function Header() {
   return (
     <nav>
       <div className="header-content">
-      <div className="logo"><img src={logo} alt="Logo" /></div>
-
         <div className={`hamburger ${isMobileMenuOpen ? 'open' : ''}`} onClick={toggleMobileMenu}>
           <span className="bar"></span>
           <span className="bar"></span>
