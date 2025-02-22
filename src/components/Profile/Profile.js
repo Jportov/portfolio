@@ -21,12 +21,12 @@ function Profile() {
             className="btn btn-color-1"
             onClick={() => (window.location.href = './#contact')}
           >
-            Informações de contato
+          Contato
           </button>
         <button
           className="btn btn-color-2"
           onClick={() => window.open(require('../assets/images/CVPORTO.pdf'), '_blank')}>
-            Baixar CV
+          Currículo
         </button>
         </div>
         <div id="socials-container">
