@@ -48,7 +48,7 @@
     padding: 1rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 1.5rem;
-    border: 0.1rem solid rgb(163, 163, 163);
+    border: 1px solid  rgb(53, 53, 53);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 
     /* Efeito de hover */
@@ -92,7 +92,7 @@
         font-weight: 500;
         color: #333;
         background-color: #fff;
-        border: 0.1rem solid rgb(163, 163, 163);
+        border: 1px solid  rgb(53, 53, 53);
         transition: background-color 0.3s ease, transform 0.3s ease;
 
         &:hover {

@@ -27,16 +27,28 @@ function Experience() {
               <p>JavaScript</p>
             </div>
             <div className="skill">
-              <img src={checkmarkIcon} alt="React Icon" />
-              <p>React</p>
-            </div>
-            <div className="skill">
               <img src={checkmarkIcon} alt="TypeScript Icon" />
               <p>TypeScript</p>
             </div>
             <div className="skill">
+              <img src={checkmarkIcon} alt="React Icon" />
+              <p>React</p>
+            </div>
+            <div className="skill">
               <img src={checkmarkIcon} alt="Vue.js Icon" />
               <p>Vue.js</p>
+            </div>
+            <div className="skill">
+              <img src={checkmarkIcon} alt="Next.js Icon" />
+              <p>Next.js</p>
+            </div>
+            <div className="skill">
+              <img src={checkmarkIcon} alt="Styled Icon" />
+              <p>Styled-Components</p>
+            </div>
+            <div className="skill">
+              <img src={checkmarkIcon} alt="Tailwind CSS Icon" />
+              <p>Tailwind CSS</p>
             </div>
             <div className="skill">
               <img src={checkmarkIcon} alt="Sass Icon" />
@@ -47,16 +59,15 @@ function Experience() {
               <p>Less</p>
             </div>
             <div className="skill">
-              <img src={checkmarkIcon} alt="jQuery Icon" />
-              <p>jQuery</p>
-            </div>
-            <div className="skill">
               <img src={checkmarkIcon} alt="Bootstrap Icon" />
               <p>Bootstrap</p>
             </div>
+            <div className="skill">
+              <img src={checkmarkIcon} alt="jQuery Icon" />
+              <p>jQuery</p>
+            </div>
           </div>
         </div>
-
         <div className="skills-category">
           <h2>Back-End</h2>
           <div className="skills-list">
@@ -65,8 +76,16 @@ function Experience() {
               <p>Java</p>
             </div>
             <div className="skill">
+              <img src={checkmarkIcon} alt="Python Icon" />
+              <p>Python</p>
+            </div>
+            <div className="skill">
               <img src={checkmarkIcon} alt="Spring Boot Icon" />
               <p>Spring Boot</p>
+            </div>
+            <div className="skill">
+              <img src={checkmarkIcon} alt="Node.js Icon" />
+              <p>Node.js</p>
             </div>
             <div className="skill">
               <img src={checkmarkIcon} alt="API REST Icon" />
@@ -81,12 +100,24 @@ function Experience() {
               <p>SQL</p>
             </div>
             <div className="skill">
+              <img src={checkmarkIcon} alt="PostGreSQL Icon" />
+              <p>PostGreSQL</p>
+            </div>
+            <div className="skill">
+              <img src={checkmarkIcon} alt="MongoDB Icon" />
+              <p>MongoDB</p>
+            </div>
+            <div className="skill">
               <img src={checkmarkIcon} alt="Maven Icon" />
               <p>Maven</p>
             </div>
             <div className="skill">
               <img src={checkmarkIcon} alt="Gradle Icon" />
               <p>Gradle</p>
+            </div>
+            <div className="skill">
+              <img src={checkmarkIcon} alt="Docker Icon" />
+              <p>Docker</p>
             </div>
           </div>
         </div>

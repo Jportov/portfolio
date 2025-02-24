@@ -17,23 +17,25 @@ function About() {
             <h3>Experiência</h3>
             <p>Desenvolvimento Full Stack</p>
           </div>
+          <div className="about-description">
+          <p>
+          Desenvolvedor Full Stack com experiência em JavaScript, React, Node.js e Python. Tenho um forte interesse em criar soluções intuitivas e escaláveis. Já trabalhei em projetos como GameTurf e E-food, onde utilizei Redux, Styled Components e integrações de APIs. Sempre busco desafios que impulsionem minha evolução profissional e me permitam inovar.
+          </p>
+        </div>
           <div className="details">
             <img src={educationIcon} alt="Educação" className="detail-icon" />
             <h3>Profissionalização</h3>
+            <p>Engenharia de Software</p>
             <p>Desenvolvedor Full Stack Java</p>
           </div>
-        </div>
         <div className="about-description">
           <p>
-            Oi, eu sou o João Victor Porto, um desenvolvedor Full Stack que adora transformar ideias em realidade através do código.
-            Tenho uma boa base em tecnologias como HTML, CSS, JavaScript e React para o front-end, além de trabalhar com Java e Spring Boot no back-end.
-            Meu foco é criar aplicações que não só sejam atraentes, mas que também funcionem de maneira fluida e intuitiva.
-            <br /><br />
-            Sempre busco soluções práticas e prezo pelos detalhes, tentando superar as expectativas em cada projeto.
-            Para mim, o sucesso no desenvolvimento Full Stack vem da combinação de criatividade, inovação e uma comunicação clara, tanto com a equipe quanto com os clientes. Vamos construir algo incrível juntos!
+            Com formação em Desenvolvimento Full Stack pela EBAC e graduação em Engenharia de Software, minha jornada na tecnologia é movida pela curiosidade e desejo de criar soluções eficientes. Minhas habilidades incluem React, Redux, TypeScript, APIs REST, Spring Boot e SQL. Além disso, busco aprimoramento contínuo com certificações em Django, IA, Docker e Integrações.
           </p>
         </div>
+        </div>
       </div>
+      
     </section>
   );
 }

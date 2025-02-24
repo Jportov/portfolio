@@ -1,8 +1,9 @@
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-
+import { scrollToNextSection } from '../../Utils/Scroll';
 import profileImage from '../assets/images/perfil2.jpg';
+import paraBaixo from '../assets/images/seta-para-baixo.png';
 import '../Buttons/ButtonStyles.scss';
 import './ProfileStyles.scss';
 
@@ -12,6 +13,7 @@ function Profile() {
       <div className="section__pic-container">
         <img src={profileImage} alt="João Victor" />
       </div>
+      <br />
       <div className="section__text">
         <p className="section__text__p1">Olá, eu sou o</p>
         <h1 className="title">João Victor</h1>
@@ -37,7 +39,6 @@ function Profile() {
               <div className="tooltip">LinkedIn</div>
             </a>
           </div>
-
           <div className="icon-content">
             <a href="https://github.com/Jportov" aria-label="GitHub"  target="_blank"
       rel="noopener noreferrer">
@@ -47,6 +48,9 @@ function Profile() {
           </div>
         </div>
       </div>
+      <button className="seta-navegacao" onClick={scrollToNextSection}>
+    <img src={paraBaixo} alt="Ir para próxima seção" />
+  </button>      
     </section>
   );
 }
