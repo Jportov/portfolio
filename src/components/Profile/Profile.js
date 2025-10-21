@@ -1,7 +1,7 @@
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { scrollToNextSection } from '../../Utils/Scroll';
-import profileImage from '../assets/images/joao1.jpeg';
+import profileImage from '../assets/images/joao2.png';
 import paraBaixo from '../assets/images/seta-para-baixo.png';
 import '../Buttons/ButtonStyles.scss';
 import './ProfileStyles.scss';
