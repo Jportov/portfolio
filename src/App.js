@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.scss';
 import About from './components/About/About';
 import Contact from './components/Contact/Contact';
@@ -14,12 +13,11 @@ function App() {
       <Header />
       <main>
         <Profile />
-        
         <About />
         <Experience />
         <Projects />
         <Contact />
-        <Footer/>
+        <Footer />
       </main>
     </div>
   );
