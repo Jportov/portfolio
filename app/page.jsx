@@ -349,7 +349,7 @@ export default function Home() {
           </h1>
           <p className="text-lg md:text-xl text-zinc-400 max-w-xl mx-auto leading-relaxed">
             Desenvolvedor <span className="text-emerald-400 font-semibold">Full Stack</span> construindo
-            soluções escaláveis, seguras e inovadoras — do backend ao pixel final.
+            soluções escaláveis, seguras e inovadoras, do backend ao pixel final.
           </p>
           <div className="flex flex-wrap justify-center gap-4 pt-2">
             <a
@@ -422,7 +422,7 @@ export default function Home() {
               <p className="text-zinc-400 leading-relaxed">
                 Sou desenvolvedor Full Stack com formação pela EBAC e graduação em andamento em
                 Engenharia de Software pela Anhanguera. Tenho experiência prática no desenvolvimento
-                de sistemas web completos — desde APIs REST robustas com autenticação até interfaces
+                de sistemas web completos, desde APIs REST robustas com autenticação até interfaces
                 responsivas e performáticas.
               </p>
               <p className="text-zinc-400 leading-relaxed">
