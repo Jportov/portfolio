@@ -19,7 +19,7 @@ export const metadata = {
     title: "João Victor Porto | Desenvolvedor Full Stack",
     description:
       "Portfólio de João Victor Porto — soluções escaláveis do backend ao pixel final.",
-    url: "https://vportodev.vercel.app",
+    url: "https://portfolio-six-beige-72.vercel.app",
     siteName: "VPorto Dev",
     locale: "pt_BR",
     type: "website",
