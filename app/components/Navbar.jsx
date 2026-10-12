@@ -1,10 +1,28 @@
 "use client";
-import { useState, useEffect } from "react";
-import { NAV_LINKS } from "../data/portfolio";
+import { useState, useEffect, useRef } from "react";
+import { NAV_LINKS, CV_LINKS } from "../data/portfolio";
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [cvOpen, setCvOpen] = useState(false);
+  const cvRef = useRef(null);
+
+  useEffect(() => {
+    if (!cvOpen) return;
+    const onPointerDown = (e) => {
+      if (!cvRef.current?.contains(e.target)) setCvOpen(false);
+    };
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setCvOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [cvOpen]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -38,14 +56,46 @@ export function Navbar() {
               {l.label}
             </a>
           ))}
-          <a
-            href="/cvjoao.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-3 px-4 py-2 text-sm font-semibold bg-rose-500 text-neutral-950 rounded-lg hover:bg-rose-400 transition-colors"
-          >
-            Download CV
-          </a>
+          <div className="relative ml-3" ref={cvRef}>
+            <button
+              type="button"
+              onClick={() => setCvOpen((prev) => !prev)}
+              aria-haspopup="true"
+              aria-expanded={cvOpen}
+              className="flex items-center gap-1.5 px-4 py-2 text-sm font-semibold bg-rose-500 text-neutral-950 rounded-lg hover:bg-rose-400 transition-colors"
+            >
+              Download CV
+              <svg
+                className={`w-4 h-4 transition-transform ${cvOpen ? "rotate-180" : ""}`}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+
+            {cvOpen && (
+              <div className="absolute right-0 mt-2 w-48 p-1.5 bg-neutral-900 border border-neutral-800 rounded-xl shadow-xl shadow-neutral-950/50">
+                {CV_LINKS.map((cv) => (
+                  <a
+                    key={cv.href}
+                    href={cv.href}
+                    hrefLang={cv.lang}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setCvOpen(false)}
+                    className="flex items-center justify-between px-3 py-2 text-sm text-neutral-300 hover:text-rose-400 hover:bg-neutral-800/50 rounded-lg transition-colors"
+                  >
+                    {cv.label}
+                    <span className="text-xs font-mono text-neutral-500">PDF</span>
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile burger */}
@@ -78,14 +128,24 @@ export function Navbar() {
               {l.label}
             </a>
           ))}
-          <a
-            href="/cvjoao.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-3 px-4 py-2 text-sm font-semibold bg-rose-500 text-neutral-950 rounded-lg"
-          >
+          <p className="pt-4 pb-2 text-xs font-mono tracking-wider uppercase text-neutral-500">
             Download CV
-          </a>
+          </p>
+          <div className="flex gap-2">
+            {CV_LINKS.map((cv) => (
+              <a
+                key={cv.href}
+                href={cv.href}
+                hrefLang={cv.lang}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
+                className="flex-1 text-center px-4 py-2.5 text-sm font-semibold bg-rose-500 text-neutral-950 rounded-lg"
+              >
+                {cv.label}
+              </a>
+            ))}
+          </div>
         </div>
       )}
     </nav>

@@ -7,6 +7,11 @@ export const NAV_LINKS = [
   { label: "Contato", href: "#contact" },
 ];
 
+export const CV_LINKS = [
+  { label: "Português", lang: "pt-BR", href: "/cv-joao-porto-pt.pdf" },
+  { label: "English", lang: "en", href: "/cv-joao-porto-en.pdf" },
+];
+
 export const SKILLS = {
   Frontend: [
     "React",
