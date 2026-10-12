@@ -2,7 +2,7 @@
 import { useReveal } from "../hooks/useReveal";
 import { GithubIcon, ExternalLinkIcon } from "./icons";
 
-export function ProjectCard({ project, index }) {
+export function ProjectCard({ project, index, labels }) {
   const [ref, visible] = useReveal();
 
   return (
@@ -16,7 +16,7 @@ export function ProjectCard({ project, index }) {
     >
       {project.featured && (
         <span className="absolute -top-3 left-6 bg-rose-500 text-neutral-950 text-[11px] font-bold tracking-wider uppercase px-3 py-1 rounded-full">
-          Destaque
+          {labels.featured}
         </span>
       )}
 
@@ -37,7 +37,7 @@ export function ProjectCard({ project, index }) {
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg bg-neutral-800 hover:bg-rose-500/20 hover:text-rose-400 transition-colors text-neutral-400"
-              aria-label={`GitHub — ${project.title}`}
+              aria-label={`${labels.github} — ${project.title}`}
             >
               <GithubIcon />
             </a>
@@ -48,7 +48,7 @@ export function ProjectCard({ project, index }) {
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-lg bg-neutral-800 hover:bg-rose-500/20 hover:text-rose-400 transition-colors text-neutral-400"
-              aria-label={`Demo ao vivo — ${project.title}`}
+              aria-label={`${labels.live} — ${project.title}`}
             >
               <ExternalLinkIcon />
             </a>

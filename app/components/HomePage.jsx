@@ -1,17 +1,13 @@
-import { Navbar } from "./components/Navbar";
-import { Section } from "./components/Section";
-import { SkillsSection } from "./components/SkillsSection";
-import { ProjectCard } from "./components/ProjectCard";
-import { SocialIcon } from "./components/icons";
-import {
-  PROJECTS,
-  EDUCATION,
-  COURSES,
-  SOCIAL_LINKS,
-  INFO_ITEMS,
-} from "./data/portfolio";
+import { Navbar } from "./Navbar";
+import { Section } from "./Section";
+import { SkillsSection } from "./SkillsSection";
+import { ProjectCard } from "./ProjectCard";
+import { SocialIcon } from "./icons";
+import { getContent } from "../data/portfolio";
 
-export default function Home() {
+export function HomePage({ lang }) {
+  const { hero, about, projects, education, contact, social, footer } = getContent(lang);
+
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100 selection:bg-rose-500/30 selection:text-rose-100">
       {/* Ambient glow */}
@@ -20,27 +16,28 @@ export default function Home() {
         <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-rose-500/[0.03] rounded-full blur-3xl" />
       </div>
 
-      <Navbar />
+      <Navbar lang={lang} />
 
       {/* ══════ HERO ══════ */}
       <header id="hero" className="min-h-screen flex items-center justify-center px-6 pt-16">
         <div className="max-w-3xl text-center space-y-6">
           <div className="inline-flex items-center gap-2 bg-neutral-900/80 border border-neutral-800 rounded-full px-4 py-1.5 text-sm text-neutral-400">
             <span className="w-2 h-2 rounded-full bg-rose-400 animate-pulse" aria-hidden="true" />
-            Disponível para oportunidades
+            {hero.badge}
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-black leading-[1.1] tracking-tight">
-            João Victor
+            {hero.firstName}
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-orange-300">
-              Porto
+              {hero.lastName}
             </span>
           </h1>
 
           <p className="text-lg md:text-xl text-neutral-400 max-w-xl mx-auto leading-relaxed">
-            Desenvolvedor <span className="text-rose-400 font-semibold">Frontend</span> com foco em
-            React, Next.js e TypeScript, construindo aplicações da interface ao deploy.
+            {hero.tagline.before}
+            <span className="text-rose-400 font-semibold">{hero.tagline.highlight}</span>
+            {hero.tagline.after}
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-2">
@@ -48,18 +45,18 @@ export default function Home() {
               href="#projects"
               className="px-6 py-3 bg-rose-500 text-neutral-950 font-bold rounded-xl hover:bg-rose-400 transition-all hover:shadow-lg hover:shadow-rose-500/20"
             >
-              Ver Projetos
+              {hero.primaryCta}
             </a>
             <a
               href="#contact"
               className="px-6 py-3 border border-neutral-700 text-neutral-300 font-bold rounded-xl hover:border-rose-500/50 hover:text-rose-400 transition-all"
             >
-              Entrar em Contato
+              {hero.secondaryCta}
             </a>
           </div>
 
           <div className="flex justify-center gap-4 pt-4">
-            {SOCIAL_LINKS.map((s) => (
+            {social.map((s) => (
               <a
                 key={s.label}
                 href={s.href}
@@ -81,32 +78,26 @@ export default function Home() {
           <div className="grid md:grid-cols-5 gap-10 items-start">
             <div className="md:col-span-3 space-y-5">
               <h2 className="text-3xl md:text-4xl font-black">
-                Sobre <span className="text-rose-400">mim</span>
+                {about.heading.title} <span className="text-rose-400">{about.heading.accent}</span>
               </h2>
-              <p className="text-neutral-400 leading-relaxed">
-                Sou desenvolvedor Frontend com foco em React, Next.js e TypeScript. Me formei no
-                curso Desenvolvedor Full Stack Java da EBAC e estou cursando Engenharia de Software
-                na Anhanguera.
-              </p>
-              <p className="text-neutral-400 leading-relaxed">
-                Desenvolvo aplicações da interface ao deploy, com gerenciamento de estado (Redux
-                Toolkit, React Query), testes automatizados (Vitest, Jest, React Testing Library) e
-                integração contínua no GitHub Actions. Também tenho base em backend com Django e
-                Spring Boot.
-              </p>
+              {about.paragraphs.map((p) => (
+                <p key={p} className="text-neutral-400 leading-relaxed">
+                  {p}
+                </p>
+              ))}
             </div>
 
             <div className="md:col-span-2 bg-neutral-900/60 border border-neutral-800 rounded-2xl p-6 space-y-4">
               <h3 className="text-sm font-mono text-rose-400 tracking-wider uppercase">
-                Informações
+                {about.infoTitle}
               </h3>
-              {INFO_ITEMS.map(([k, v]) => (
+              {about.info.map((item) => (
                 <div
-                  key={k}
+                  key={item.label}
                   className="flex justify-between text-sm border-b border-neutral-800/60 pb-2 last:border-0 last:pb-0"
                 >
-                  <span className="text-neutral-500">{k}</span>
-                  <span className="text-neutral-300 font-medium">{v}</span>
+                  <span className="text-neutral-500">{item.label}</span>
+                  <span className="text-neutral-300 font-medium">{item.value}</span>
                 </div>
               ))}
             </div>
@@ -114,19 +105,27 @@ export default function Home() {
         </Section>
 
         {/* ══════ SKILLS ══════ */}
-        <SkillsSection />
+        <SkillsSection lang={lang} />
 
         {/* ══════ PROJECTS ══════ */}
         <Section id="projects">
           <h2 className="text-3xl md:text-4xl font-black mb-2">
-            Projetos <span className="text-rose-400">Relevantes</span>
+            {projects.heading.title}{" "}
+            <span className="text-rose-400">{projects.heading.accent}</span>
           </h2>
-          <p className="text-neutral-500 mb-8 text-sm">
-            Uma seleção de projetos que demonstram minhas habilidades técnicas.
-          </p>
+          <p className="text-neutral-500 mb-8 text-sm">{projects.subtitle}</p>
           <div className="grid md:grid-cols-2 gap-6">
-            {PROJECTS.map((p, i) => (
-              <ProjectCard key={p.title} project={p} index={i} />
+            {projects.items.map((p, i) => (
+              <ProjectCard
+                key={p.title}
+                project={p}
+                index={i}
+                labels={{
+                  featured: projects.featuredLabel,
+                  github: projects.githubLabel,
+                  live: projects.liveLabel,
+                }}
+              />
             ))}
           </div>
         </Section>
@@ -134,11 +133,12 @@ export default function Home() {
         {/* ══════ EDUCATION ══════ */}
         <Section id="education">
           <h2 className="text-3xl md:text-4xl font-black mb-8">
-            Formação <span className="text-rose-400">& Cursos</span>
+            {education.heading.title}{" "}
+            <span className="text-rose-400">{education.heading.accent}</span>
           </h2>
 
           <div className="grid md:grid-cols-2 gap-6 mb-10">
-            {EDUCATION.map((e) => (
+            {education.items.map((e) => (
               <div
                 key={e.title}
                 className="bg-neutral-900/60 border border-neutral-800 rounded-2xl p-6 hover:border-rose-500/30 transition-colors"
@@ -148,20 +148,20 @@ export default function Home() {
                 <p className="text-neutral-400 text-sm mt-1">{e.institution}</p>
                 <span
                   className={`inline-block mt-3 text-xs font-semibold px-2.5 py-1 rounded-full ${
-                    e.status === "Em andamento"
+                    e.status === "inProgress"
                       ? "bg-amber-500/15 text-amber-400"
                       : "bg-rose-500/15 text-rose-400"
                   }`}
                 >
-                  {e.status}
+                  {education.statusLabels[e.status]}
                 </span>
               </div>
             ))}
           </div>
 
-          <h3 className="text-lg font-bold text-neutral-300 mb-4">Cursos Complementares</h3>
+          <h3 className="text-lg font-bold text-neutral-300 mb-4">{education.coursesTitle}</h3>
           <div className="flex flex-wrap gap-2">
-            {COURSES.map((c) => (
+            {education.courses.map((c) => (
               <span
                 key={c}
                 className="text-xs font-mono bg-neutral-900 border border-neutral-800 text-neutral-400 px-3 py-1.5 rounded-lg"
@@ -176,31 +176,27 @@ export default function Home() {
         <Section id="contact">
           <div className="bg-neutral-900/60 border border-neutral-800 rounded-3xl p-8 md:p-12 text-center max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-black mb-4">
-              Vamos <span className="text-rose-400">conversar?</span>
+              {contact.heading.title}{" "}
+              <span className="text-rose-400">{contact.heading.accent}</span>
             </h2>
-            <p className="text-neutral-400 mb-8 leading-relaxed">
-              Estou aberto a oportunidades como Desenvolvedor Frontend,
-              remotas ou com realocação.
-            </p>
+            <p className="text-neutral-400 mb-8 leading-relaxed">{contact.text}</p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a
-                href="mailto:victorportodev@gmail.com"
+                href={`mailto:${contact.email}`}
                 className="px-6 py-3 bg-rose-500 text-neutral-950 font-bold rounded-xl hover:bg-rose-400 transition-all hover:shadow-lg hover:shadow-rose-500/20"
               >
-                victorportodev@gmail.com
+                {contact.email}
               </a>
               <a
-                href="https://linkedin.com/in/vportodev"
+                href={contact.linkedin.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-6 py-3 border border-neutral-700 text-neutral-300 font-bold rounded-xl hover:border-rose-500/50 hover:text-rose-400 transition-all"
               >
-                LinkedIn
+                {contact.linkedin.label}
               </a>
             </div>
-            <p className="text-neutral-600 text-sm mt-6">
-              Tel.: (22) 99244-3293 · Rio das Ostras/RJ · Remoto ou realocação
-            </p>
+            <p className="text-neutral-600 text-sm mt-6">{contact.details}</p>
           </div>
         </Section>
       </main>
@@ -209,10 +205,10 @@ export default function Home() {
       <footer className="border-t border-neutral-800/60 py-8 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-neutral-500">
           <span>
-            © {new Date().getFullYear()} João Victor Porto. Todos os direitos reservados.
+            © {new Date().getFullYear()} {footer.rights}
           </span>
           <span className="flex items-center gap-1.5">
-            Feito com{" "}
+            {footer.madeWith}{" "}
             <span className="text-rose-400">Next.js</span>
             {" "}+{" "}
             <span className="text-rose-400">Tailwind CSS</span>
