@@ -2,7 +2,7 @@
 
 Portfólio pessoal construído com **Next.js 14**, **Tailwind CSS** e deploy na **Vercel**.
 
-🔗 **Live:** [vportodev.vercel.app](https://vportodev.vercel.app)
+🔗 **Live:** [portfolio-six-beige-72.vercel.app](https://portfolio-six-beige-72.vercel.app)
 
 ---
 
