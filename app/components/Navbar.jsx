@@ -16,15 +16,15 @@ export function Navbar() {
     <nav
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-800/60 shadow-lg shadow-zinc-950/50"
+          ? "bg-neutral-950/80 backdrop-blur-xl border-b border-neutral-800/60 shadow-lg shadow-neutral-950/50"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
         <a href="#hero" className="font-black text-lg tracking-tight">
-          <span className="text-emerald-400">&lt;</span>
+          <span className="text-rose-400">&lt;</span>
           VPortoDev
-          <span className="text-emerald-400"> /&gt;</span>
+          <span className="text-rose-400"> /&gt;</span>
         </a>
 
         {/* Desktop links */}
@@ -33,7 +33,7 @@ export function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="px-3 py-2 text-sm text-zinc-400 hover:text-emerald-400 transition-colors rounded-lg hover:bg-zinc-800/50"
+              className="px-3 py-2 text-sm text-neutral-400 hover:text-rose-400 transition-colors rounded-lg hover:bg-neutral-800/50"
             >
               {l.label}
             </a>
@@ -42,7 +42,7 @@ export function Navbar() {
             href="/cvjoao.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-3 px-4 py-2 text-sm font-semibold bg-emerald-500 text-zinc-950 rounded-lg hover:bg-emerald-400 transition-colors"
+            className="ml-3 px-4 py-2 text-sm font-semibold bg-rose-500 text-neutral-950 rounded-lg hover:bg-rose-400 transition-colors"
           >
             Download CV
           </a>
@@ -50,7 +50,7 @@ export function Navbar() {
 
         {/* Mobile burger */}
         <button
-          className="md:hidden p-2 text-zinc-400 hover:text-zinc-100"
+          className="md:hidden p-2 text-neutral-400 hover:text-neutral-100"
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={menuOpen}
@@ -67,13 +67,13 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-zinc-950/95 backdrop-blur-xl border-b border-zinc-800 px-6 pb-6 space-y-1">
+        <div className="md:hidden bg-neutral-950/95 backdrop-blur-xl border-b border-neutral-800 px-6 pb-6 space-y-1">
           {NAV_LINKS.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setMenuOpen(false)}
-              className="block py-2.5 text-sm text-zinc-300 hover:text-emerald-400 transition-colors"
+              className="block py-2.5 text-sm text-neutral-300 hover:text-rose-400 transition-colors"
             >
               {l.label}
             </a>
@@ -82,7 +82,7 @@ export function Navbar() {
             href="/cvjoao.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block mt-3 px-4 py-2 text-sm font-semibold bg-emerald-500 text-zinc-950 rounded-lg"
+            className="inline-block mt-3 px-4 py-2 text-sm font-semibold bg-rose-500 text-neutral-950 rounded-lg"
           >
             Download CV
           </a>

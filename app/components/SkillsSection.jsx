@@ -10,9 +10,9 @@ export function SkillsSection() {
   return (
     <section id="skills" ref={containerRef}>
       <h2 className="text-3xl md:text-4xl font-black mb-2">
-        Hard <span className="text-emerald-400">Skills</span>
+        Hard <span className="text-rose-400">Skills</span>
       </h2>
-      <p className="text-zinc-500 mb-8 text-sm">
+      <p className="text-neutral-500 mb-8 text-sm">
         Tecnologias que uso nos projetos abaixo.
       </p>
 
@@ -25,8 +25,8 @@ export function SkillsSection() {
             onClick={() => setActiveTab(cat)}
             className={`px-4 py-2 text-sm font-medium rounded-lg whitespace-nowrap transition-all ${
               activeTab === cat
-                ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30"
-                : "text-zinc-500 hover:text-zinc-300 border border-transparent hover:bg-zinc-800/50"
+                ? "bg-rose-500/15 text-rose-400 border border-rose-500/30"
+                : "text-neutral-500 hover:text-neutral-300 border border-transparent hover:bg-neutral-800/50"
             }`}
           >
             {cat}
@@ -42,7 +42,7 @@ export function SkillsSection() {
         {SKILLS[activeTab]?.map((skill) => (
           <li
             key={skill}
-            className="text-sm font-mono bg-zinc-900 border border-zinc-800 text-zinc-300 px-4 py-2 rounded-lg hover:border-emerald-500/40 hover:text-emerald-300 transition-colors"
+            className="text-sm font-mono bg-neutral-900 border border-neutral-800 text-neutral-300 px-4 py-2 rounded-lg hover:border-rose-500/40 hover:text-rose-300 transition-colors"
           >
             {skill}
           </li>

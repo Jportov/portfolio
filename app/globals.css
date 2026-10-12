@@ -20,7 +20,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: #09090b;
+  background: #0a0a0a;
   color: #fafafa;
   overflow-x: hidden;
 }
@@ -34,26 +34,26 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #0a0a0a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #262626;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #404040;
 }
 
 /* Selection */
 ::selection {
-  background: rgba(16, 185, 129, 0.3);
-  color: #d1fae5;
+  background: rgba(244, 63, 94, 0.3);
+  color: #ffe4e6;
 }
 
 /* Smooth focus styles */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #10b981;
+  outline: 2px solid #f43f5e;
   outline-offset: 2px;
   border-radius: 4px;
 }
