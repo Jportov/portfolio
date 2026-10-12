@@ -1,80 +1,91 @@
-# 🚀 João Victor Porto — Portfólio
+# João Victor Porto | Portfolio
 
-Portfólio pessoal construído com **Next.js 14**, **Tailwind CSS** e deploy na **Vercel**.
+![Portfolio home page](docs/screenshot.png)
 
-🔗 **Live:** [portfolio-six-beige-72.vercel.app](https://portfolio-six-beige-72.vercel.app)
+Personal portfolio built with **Next.js 14** and **Tailwind CSS**, deployed on **Vercel**.
 
----
+**Live:** [portfolio-six-beige-72.vercel.app](https://portfolio-six-beige-72.vercel.app)
 
-## ✨ Features
+## Features
 
-- **Dark mode moderno** com paleta emerald/zinc
-- **Totalmente responsivo** — mobile-first design
-- **SEO otimizado** com meta tags Open Graph e SSR do Next.js
-- **Animações de scroll** com Intersection Observer
-- **Skills por categoria** com tabs
-- **Cards de projeto** com destaque para projetos principais
-- **Navbar fixa** com blur/glassmorphism no scroll
-- **Performance A+** — sem dependências pesadas
+- **English and Portuguese** versions (`/` and `/pt`) with a PT/EN switch in the navbar
+- **Bilingual CV download**, offering the PDF in the active language first
+- **Dark theme** with a rose on neutral palette
+- **Fully responsive**, mobile-first layout
+- **SEO**: per-language metadata, `hreflang` alternates and a generated Open Graph image
+- **Scroll animations** with Intersection Observer
+- **Skills as tags**, grouped by category in tabs
+- **Project cards** with featured projects, tech tags and links
+- **Fixed navbar** with blur on scroll
+- **No heavy dependencies**: no i18n or UI libraries
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-| Camada     | Tecnologia                |
-| ---------- | ------------------------- |
-| Framework  | Next.js 14 (App Router)   |
-| Styling    | Tailwind CSS 3.4          |
-| Linguagem  | JavaScript (React 18)     |
-| Fonts      | Outfit + JetBrains Mono   |
-| Deploy     | Vercel                    |
+| Layer     | Technology              |
+| --------- | ----------------------- |
+| Framework | Next.js 14 (App Router) |
+| Styling   | Tailwind CSS 3.4        |
+| Language  | JavaScript (React 18)   |
+| Fonts     | Outfit + JetBrains Mono |
+| Deploy    | Vercel                  |
 
-## 📦 Como rodar localmente
+## Running locally
 
 ```bash
-# Clone o repositório
 git clone https://github.com/Jportov/portfolio.git
 cd portfolio
-
-# Instale as dependências
 npm install
-
-# Rode o servidor de desenvolvimento
 npm run dev
 ```
 
-Acesse [http://localhost:3000](http://localhost:3000)
+Open [http://localhost:3000](http://localhost:3000).
 
-## 📁 Estrutura do Projeto
+## Project structure
 
 ```
 portfolio/
 ├── app/
-│   ├── globals.css       # Estilos globais + Tailwind
-│   ├── layout.jsx        # Layout raiz com metadata/SEO
-│   └── page.jsx          # Página principal com todas as seções
-├── public/               # Assets estáticos (CV, imagens)
+│   ├── (en)/                  # English routes (default language, served at /)
+│   ├── (pt)/                  # Portuguese routes (served at /pt)
+│   ├── components/            # HomePage, Navbar, ProjectCard, SkillsSection...
+│   ├── data/portfolio.js      # All site content, in English and Portuguese
+│   ├── fonts/                 # Outfit files used by the Open Graph image
+│   ├── hooks/useReveal.js     # Scroll reveal hook
+│   ├── lib/metadata.js        # Per-language SEO metadata
+│   ├── globals.css            # Global styles + Tailwind
+│   ├── icon.svg               # Favicon
+│   └── opengraph-image.jsx    # Link preview image
+├── docs/                      # README assets
+├── public/                    # Static assets (CV PDFs)
 ├── tailwind.config.js
 ├── postcss.config.js
 ├── next.config.js
 └── package.json
 ```
 
-## 📝 Seções
+## Editing content
 
-- **Hero** — Apresentação com links sociais e CTA
-- **Sobre** — Resumo profissional + informações rápidas
-- **Skills** — Barras de progresso animadas com tabs (Frontend / Backend / DevOps)
-- **Projetos** — Cards com destaque, tags de tecnologia e links
-- **Formação** — Educação formal e cursos complementares
-- **Contato** — CTA final com email, LinkedIn e telefone
+All visible text lives in [`app/data/portfolio.js`](app/data/portfolio.js). Text that changes with the language is written as `{ en: "...", pt: "..." }`; everything else is shared by both languages.
 
-## 🚀 Deploy
+Each language has its own root layout, so `<html lang>`, the page title, the description and the Open Graph locale follow the active language.
 
-O projeto está configurado para deploy automático na Vercel. Basta conectar o repositório GitHub à Vercel e o deploy acontece a cada push na branch `main`.
+## Sections
 
-## 📄 Licença
+- **Hero**: introduction with social links and calls to action
+- **About**: professional summary and quick facts
+- **Skills**: tags grouped in tabs (Frontend / Testing & Quality / Backend / Tools)
+- **Projects**: cards with featured projects, tech tags and links
+- **Education**: degrees and additional courses
+- **Contact**: email, LinkedIn and phone
 
-Este projeto é de uso pessoal. Sinta-se livre para se inspirar, mas por favor não copie o conteúdo pessoal.
+## Deploy
+
+The project deploys automatically on Vercel on every push to the `main` branch.
+
+## License
+
+This project is for personal use. Feel free to use it as inspiration, but please do not copy the personal content.
 
 ---
 
-**Feito com ☕ por [João Victor Porto](https://linkedin.com/in/vportodev)**
+Built by [João Victor Porto](https://linkedin.com/in/vportodev)
