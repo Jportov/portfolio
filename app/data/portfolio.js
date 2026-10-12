@@ -62,7 +62,7 @@ export const PROJECTS = [
     description:
       "Painel CRUD completo entregue em 24 horas para teste técnico de vaga React Júnior, com todos os requisitos obrigatórios e os 9 diferenciais. Estado global com Redux Toolkit, cache de servidor com React Query, testes unitários e de integração com Vitest e React Testing Library, CI no GitHub Actions, code splitting, acessibilidade, dark mode e Storybook.",
     tech: ["React", "TypeScript", "Redux Toolkit", "React Query", "MUI", "Vitest", "GitHub Actions"],
-    github: null,
+    github: "https://github.com/Jportov/test-react",
     live: "https://test-react-five-lake.vercel.app",
     featured: true,
   },
