@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import { SKILLS } from "../data/portfolio";
-import { SkillBar } from "./SkillBar";
 import { useReveal } from "../hooks/useReveal";
 
 export function SkillsSection() {
@@ -14,13 +13,15 @@ export function SkillsSection() {
         Hard <span className="text-emerald-400">Skills</span>
       </h2>
       <p className="text-zinc-500 mb-8 text-sm">
-        Nível de proficiência baseado em experiência prática em projetos.
+        Tecnologias que uso nos projetos abaixo.
       </p>
 
-      <div className="flex gap-2 mb-8 overflow-x-auto pb-2">
+      <div className="flex gap-2 mb-8 overflow-x-auto pb-2" role="tablist">
         {Object.keys(SKILLS).map((cat) => (
           <button
             key={cat}
+            role="tab"
+            aria-selected={activeTab === cat}
             onClick={() => setActiveTab(cat)}
             className={`px-4 py-2 text-sm font-medium rounded-lg whitespace-nowrap transition-all ${
               activeTab === cat
@@ -33,17 +34,20 @@ export function SkillsSection() {
         ))}
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-x-10 gap-y-4">
-        {SKILLS[activeTab]?.map((skill, i) => (
-          <SkillBar
-            key={skill.name}
-            name={skill.name}
-            level={skill.level}
-            delay={i}
-            visible={visible}
-          />
+      <ul
+        className={`flex flex-wrap gap-3 transition-all duration-500 ${
+          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+        }`}
+      >
+        {SKILLS[activeTab]?.map((skill) => (
+          <li
+            key={skill}
+            className="text-sm font-mono bg-zinc-900 border border-zinc-800 text-zinc-300 px-4 py-2 rounded-lg hover:border-emerald-500/40 hover:text-emerald-300 transition-colors"
+          >
+            {skill}
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

@@ -39,8 +39,8 @@ export default function Home() {
           </h1>
 
           <p className="text-lg md:text-xl text-zinc-400 max-w-xl mx-auto leading-relaxed">
-            Desenvolvedor <span className="text-emerald-400 font-semibold">Full Stack</span> construindo
-            soluções escaláveis, seguras e inovadoras, do backend ao pixel final.
+            Desenvolvedor <span className="text-emerald-400 font-semibold">Frontend</span> com foco em
+            React, Next.js e TypeScript, construindo aplicações da interface ao deploy.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 pt-2">
@@ -84,16 +84,15 @@ export default function Home() {
                 Sobre <span className="text-emerald-400">mim</span>
               </h2>
               <p className="text-zinc-400 leading-relaxed">
-                Sou desenvolvedor Full Stack com formação pela EBAC e graduação em andamento em
-                Engenharia de Software pela Anhanguera. Tenho experiência prática no desenvolvimento
-                de sistemas web completos, desde APIs REST robustas com autenticação até interfaces
-                responsivas e performáticas.
+                Sou desenvolvedor Frontend com foco em React, Next.js e TypeScript. Me formei no
+                curso Desenvolvedor Full Stack Java da EBAC e estou cursando Engenharia de Software
+                na Anhanguera.
               </p>
               <p className="text-zinc-400 leading-relaxed">
-                Meu perfil é proativo, analítico e orientado a resultados. Trabalho com metodologias
-                ágeis e busco sempre entregar soluções escaláveis e bem arquitetadas. Atualmente
-                focado em aprofundar meus conhecimentos em microsserviços, cloud e arquitetura de
-                software.
+                Desenvolvo aplicações da interface ao deploy, com gerenciamento de estado (Redux
+                Toolkit, React Query), testes automatizados (Vitest, Jest, React Testing Library) e
+                integração contínua no GitHub Actions. Também tenho base em backend com Django e
+                Spring Boot.
               </p>
             </div>
 
@@ -180,8 +179,8 @@ export default function Home() {
               Vamos <span className="text-emerald-400">conversar?</span>
             </h2>
             <p className="text-zinc-400 mb-8 leading-relaxed">
-              Estou aberto a oportunidades como Desenvolvedor Full Stack.
-              Vamos construir algo incrível juntos!
+              Estou aberto a oportunidades como Desenvolvedor Frontend,
+              remotas ou com realocação.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <a
@@ -200,7 +199,7 @@ export default function Home() {
               </a>
             </div>
             <p className="text-zinc-600 text-sm mt-6">
-              Tel.: (22) 99244-3293 · Rio das Ostras/RJ · Disponível para realocação
+              Tel.: (22) 99244-3293 · Rio das Ostras/RJ · Remoto ou realocação
             </p>
           </div>
         </Section>

@@ -12,7 +12,7 @@ Portfólio pessoal construído com **Next.js 14**, **Tailwind CSS** e deploy na 
 - **Totalmente responsivo** — mobile-first design
 - **SEO otimizado** com meta tags Open Graph e SSR do Next.js
 - **Animações de scroll** com Intersection Observer
-- **Skill bars animadas** com tabs por categoria
+- **Skills por categoria** com tabs
 - **Cards de projeto** com destaque para projetos principais
 - **Navbar fixa** com blur/glassmorphism no scroll
 - **Performance A+** — sem dependências pesadas

@@ -3,22 +3,23 @@ import "./globals.css";
 // ── Metadata para SEO ──
 // Isso é o que aparece no Google e quando alguém compartilha seu link
 export const metadata = {
-  title: "João Victor Porto | Desenvolvedor Full Stack",
+  title: "João Victor Porto | Desenvolvedor Frontend",
   description:
-    "Portfólio de João Victor Porto — Desenvolvedor Full Stack especializado em React, Next.js, Django e soluções escaláveis.",
+    "Portfólio de João Victor Porto — Desenvolvedor Frontend com foco em React, Next.js e TypeScript.",
   keywords: [
-    "desenvolvedor full stack",
+    "desenvolvedor frontend",
+    "frontend developer",
     "react",
     "next.js",
-    "django",
+    "typescript",
     "João Victor Porto",
   ],
   authors: [{ name: "João Victor Porto" }],
   // Open Graph = preview quando compartilha no LinkedIn/WhatsApp
   openGraph: {
-    title: "João Victor Porto | Desenvolvedor Full Stack",
+    title: "João Victor Porto | Desenvolvedor Frontend",
     description:
-      "Portfólio de João Victor Porto — soluções escaláveis do backend ao pixel final.",
+      "Portfólio de João Victor Porto — Desenvolvedor Frontend com foco em React, Next.js e TypeScript.",
     url: "https://portfolio-six-beige-72.vercel.app",
     siteName: "VPorto Dev",
     locale: "pt_BR",
