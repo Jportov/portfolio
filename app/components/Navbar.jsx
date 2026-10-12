@@ -3,6 +3,16 @@ import { useState, useEffect, useRef } from "react";
 import { LOCALES, getContent, getCvLinks } from "../data/portfolio";
 
 function LanguageSwitch({ lang, label }) {
+  // Mantém a seção atual ao trocar de idioma, em vez de voltar ao topo
+  const keepSection = (e, path) => {
+    const current = [...document.querySelectorAll("section[id]")]
+      .filter((el) => el.getBoundingClientRect().top <= 120)
+      .pop();
+    if (!current) return;
+    e.preventDefault();
+    window.location.href = `${path}#${current.id}`;
+  };
+
   return (
     <div
       role="group"
@@ -16,6 +26,7 @@ function LanguageSwitch({ lang, label }) {
           hrefLang={locale.htmlLang}
           lang={locale.htmlLang}
           title={locale.name}
+          onClick={(e) => keepSection(e, locale.path)}
           aria-current={code === lang ? "true" : undefined}
           className={`px-2.5 py-1.5 rounded-md transition-colors ${
             code === lang
