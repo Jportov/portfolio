@@ -150,7 +150,7 @@ export function HomePage({ lang }) {
                   className={`inline-block mt-3 text-xs font-semibold px-2.5 py-1 rounded-full ${
                     e.status === "inProgress"
                       ? "bg-amber-500/15 text-amber-400"
-                      : "bg-rose-500/15 text-rose-400"
+                      : "bg-emerald-500/15 text-emerald-400"
                   }`}
                 >
                   {education.statusLabels[e.status]}
