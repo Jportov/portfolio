@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 // Imagem de preview quando o link é compartilhado (LinkedIn, WhatsApp)
-export const alt = "João Victor Porto | Frontend Developer | React · Next.js · TypeScript";
+export const alt = "João Victor Porto | Full Stack Developer | React · Next.js · Node.js · Django";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 // Edge: o runtime Node do next/og quebra no build em Windows
@@ -59,7 +59,7 @@ export default async function OpengraphImage() {
             </span>
           </div>
           <div style={{ display: "flex", marginTop: 36, fontSize: 44, fontWeight: 500 }}>
-            Frontend Developer
+            Full Stack Developer
           </div>
           <div
             style={{
@@ -70,7 +70,7 @@ export default async function OpengraphImage() {
               color: "#a3a3a3",
             }}
           >
-            React · Next.js · TypeScript
+            React · Next.js · TypeScript · Node.js · Django
           </div>
         </div>
       </div>

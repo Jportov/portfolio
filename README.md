@@ -73,7 +73,7 @@ Each language has its own root layout, so `<html lang>`, the page title, the des
 
 - **Hero**: introduction with social links and calls to action
 - **About**: professional summary and quick facts
-- **Skills**: tags grouped in tabs (Frontend / Testing & Quality / Backend / Tools)
+- **Skills**: tags grouped in tabs (Frontend / Testing & Quality / Backend / Databases / Tools)
 - **Projects**: cards with featured projects, tech tags and links
 - **Education**: degrees and additional courses
 - **Contact**: email, LinkedIn and phone
